@@ -5,13 +5,18 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const goalsData = await Goals.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+    router.get('/', withAuth, async (req, res) => {
+      // find all tags
+      // be sure to include its associated Product data
+      try {
+        const goalsData = await Goals.findAll({
+          include: [{ model: Goals }],
+        });
+        res.status(200).json(goalsData);
+      }
+      catch (err) {
+        res.status(500).json(err);
+      }
     });
 
     // Serialize data so the template can read it
@@ -27,24 +32,22 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
+  // find a single tag by its `id`
+  // be sure to include its associated Product data
   try {
-    const projectData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+    const goalsData = await Goals.findByPk(req.params.id, {
+      include: [{ model: Goals }],
     });
 
-    const project = projectData.get({ plain: true });
+    if (!goalsData) {
+      res.status(404).json({ message: 'No goals found with this id!' });
+      return;
+    }
 
-    res.render('project', {
-      ...project,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
+    res.status(200).json(goalsData);
+  }
+  catch (err) {
     res.status(500).json(err);
   }
 });
