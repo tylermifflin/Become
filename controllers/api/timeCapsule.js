@@ -2,6 +2,18 @@ const router = require('express').Router();
 const { TimeCapsule } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+router.get('/', async (req, res) => {
+  try {
+    const TimeCapsuleData = await TimeCapsule.findAll({
+      include: [{ model: TimeCapsule }],
+    });
+    res.status(200).json(goalsData);
+  }
+  catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.post('/', withAuth, async (req, res) => {
   try {
     const newTimeCapsule = await TimeCapsule.create({
