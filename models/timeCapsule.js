@@ -24,6 +24,9 @@ TimeCapsule.init(
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
+            validate: {
+                isAfter: NOW,
+            },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -40,6 +43,6 @@ TimeCapsule.init(
           }
         );
         
-        module.exports = Project;
+        module.exports = TimeCapsule;
 
 
