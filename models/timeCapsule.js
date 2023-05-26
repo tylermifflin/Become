@@ -15,6 +15,10 @@ TimeCapsule.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
