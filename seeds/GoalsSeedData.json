@@ -2,22 +2,22 @@
     {
       "title": "Complete Project A",
       "description": "Finish all tasks and deliverables for Project A",
-      "date_created": "2023-05-25",
-      "end_date": "2023-06-22",
+      "date_created": "05/25/2023",
+      "end_date": "08/15/2023",
       "user_id": 1
     },
     {
       "title": "Learn a new programming language",
       "description": "Dedicate time to learn a new programming language",
-      "date_created": "2023-05-25",
-      "end_date": "2023-06-15",
+      "date_created": "05/25/2023",
+      "end_date": "06/15/2023",
       "user_id": 1
     },
     {
       "title": "Exercise regularly",
       "description": "Establish a consistent exercise routine",
-      "date_created": "2023-05-25",
-      "end_date": "2023-07-01",
+      "date_created": "05/25/2023",
+      "end_date": "07/15/2023",
       "user_id": 2
     }
   ]
