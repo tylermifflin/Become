@@ -3,7 +3,7 @@ const { User, TimeCapsule, Goals } = require('../models');
 
 const userData = require('./userData.json');
 const timeCapsuleData = require('./timeCapsuleData.json');
-const goalsData = require('./goalsData.json');
+const goalsData = require('./goalsSeedData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -13,18 +13,18 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const Goals of goalsData) {
+  for (const goal of goalsData) {
     await Goals.create({
-      ...Goals,
+      ...goal,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 
 
 
-  for (const TimeCapsule of timeCapsuleData) {
+  for (const timecapsule of timeCapsuleData) {
     await TimeCapsule.create({
-      ...TimeCapsule,
+      ...timecapsule,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
