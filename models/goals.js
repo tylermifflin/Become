@@ -27,9 +27,9 @@ Goals.init(
     end_date: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW() + 28 * 24 * 60 * 60 * 1000,
+      defaultValue: DataTypes.NOW,
       validate: {
-        isAfter: NOW,
+        isAfter: DataTypes.NOW,
       },
     },
     user_id: {
