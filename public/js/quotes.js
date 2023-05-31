@@ -17,3 +17,7 @@ mountainbackground.addEventListener('click', async (event) => {
 forestbackground.addEventListener('click', async (event) => {
     changeBackground('/images/forest.jpg')
 });
+
+const changeBackground = async (image) => {
+    container.style.backgroundImage = `url(${image})`;
+}
