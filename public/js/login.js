@@ -51,3 +51,11 @@ document
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
+
+document
+  .querySelector('.login-form')
+  .addEventListener('reset', loginFormHandler);
+  
+document
+  .querySelector('.signup-form')
+  .addEventListener('logout', signupFormHandler);
