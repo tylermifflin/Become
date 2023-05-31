@@ -4,40 +4,6 @@ const withAuth = require('../../utils/auth');
 
 // The `/api/tags` endpoint
 
-router.get('/', withAuth, async (req, res) => {
-  // find all tags
-  // be sure to include its associated Product data
-  try {
-    const goalsData = await Goals.findAll({
-      include: [{ model: Goals }],
-    });
-    res.status(200).json(goalsData);
-  }
-  catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/:id', withAuth, async (req, res) => {
-  // find a single tag by its `id`
-  // be sure to include its associated Product data
-  try {
-    const goalsData = await Goals.findByPk(req.params.id, {
-      include: [{ model: Goals }],
-    });
-
-    if (!goalsData) {
-      res.status(404).json({ message: 'No goals found with this id!' });
-      return;
-    }
-
-    res.status(200).json(goalsData);
-  }
-  catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 router.post('/', withAuth, async (req, res) => {
   // create a new tag
   try {
