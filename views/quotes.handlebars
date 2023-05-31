@@ -1,0 +1,31 @@
+<!-- setting up quotes.handlebars to use quotes.js here and render the quotes -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivational Quotes!</title>
+  <link rel="stylesheet" href="/css/quotes.css">
+</head>
+<body id="container">
+  <h1>Motivational Quote of the Day</h1>
+<!-- i want to insert getapi function from quotes.handlebars into this div-->
+<div class="quote-container">
+  <div class="quote-text">
+    <i class="fas fa-quote-left"></i>
+    <span id="quote">"{{quote}}"</span>
+    </div>
+  <div class="quote-author">
+    <span id="author">-{{author}}</span>
+  </div>
+  <div class="buttons">
+    <button class="btn btn-primary" id="new-quote">New Quote</button>
+  </div>
+  <!-- I want to insert 2 buttons here to change background image -->
+    <div class="buttons">
+        <button class="btn btn-primary" id="mountain-background">Mountain Background</button>
+        <button class="btn btn-primary" id="forest-background">Forest Background</button>
+</div>
+
+<script src="./js/quotes.js"></script>
