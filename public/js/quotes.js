@@ -21,3 +21,7 @@ forestbackground.addEventListener('click', async (event) => {
 const changeBackground = async (image) => {
     container.style.backgroundImage = `url(${image})`;
 }
+
+document
+    .querySelector('#new-quote')
+    .addEventListener('click', newquotehandler);
