@@ -1,43 +1,45 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Goals</title>
     <link rel="stylesheet" href="../public/css/goals.css">
-  <body>
+</head>
+<body>
     <h1>Goals</h1>
-  
-  {{#if goals}}
-    <ul>
-      {{#each goals}}
-        <li>
-          <h2>{{this.title}}</h2>
-          <p>{{this.description}}</p>
-          <p>Created: {{this.date_created}}</p>
-          <p>End Date: {{this.end_date}}</p>
-          <form action="/goals/{{this.id}}" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <button type="submit">Delete</button>
-          </form>
-        </li>
-      {{/each}}
-    </ul>
-  {{else}}
-    <p>No goals found.</p>
-  {{/if}}
 
-  <form action="/goals" method="POST">
-    <label for="title">Goal Name:</label>
-    <input type="text" name="title" id="title" placeholder="Enter a title" required>
-    <br>
-    <label for="description">What Is Your Goal?:</label>
-    <input type="text" name="description" id="description" placeholder="Enter a description" required>
-    <br>
-    <label for="end_date">End Date:</label>
-    <input type="date" name="end_date" id="end_date" required>
-    <br>
-    <button type="submit">Add Goal</button>
-  </form>
-  
- <script src="../public/js/goals.js"></script>
- </body>
- </html>
+    {{#if goals}}
+    <ul>
+        {{#each goals}}
+        <li>
+            <h2>{{this.title}}</h2>
+            <p>{{this.description}}</p>
+            <p>Created: {{this.date_created}}</p>
+            <p>End Date: {{this.end_date}}</p>
+            <form action="/goals/{{this.id}}" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="delete-btn" type="submit">Delete</button>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p>No goals found.</p>
+    {{/if}}
+
+    <form id="add-goal-form" action="/goals" method="POST">
+        <label for="title">Goal Name:</label>
+        <input type="text" name="title" id="title" placeholder="Enter a title" required>
+        <br>
+        <label for="description">What Is Your Goal?:</label>
+        <input type="text" name="description" id="description" placeholder="Enter a description" required>
+        <br>
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date" required>
+        <br>
+        <button id="add-goal-btn" type="submit">Add Goal</button>
+    </form>
+
+    <script src="../public/js/goals.js"></script>
+</body>
+</html>
