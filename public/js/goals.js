@@ -1,31 +1,21 @@
-document.querySelector('form').addEventListener('submit', async (event) => {
+// Attach event listener to delete buttons
+const deleteButtons = document.querySelectorAll('.delete-btn');
+deleteButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const confirmation = confirm('Are you sure you want to delete this goal?');
+        if (confirmation) {
+            const form = button.parentNode;
+            form.submit();
+        }
+    });
+});
+
+// Attach event listener to add goal button
+const addGoalForm = document.getElementById('add-goal-form');
+const addGoalButton = document.getElementById('add-goal-btn');
+addGoalButton.addEventListener('click', (event) => {
     event.preventDefault();
-  
-    const titleInput = document.querySelector('#title');
-    const descriptionInput = document.querySelector('#description');
-    const endDateInput = document.querySelector('#end_date');
-  
-    const newGoal = {
-      title: titleInput.value.trim(),
-      description: descriptionInput.value.trim(),
-      end_date: endDateInput.value.trim()
-    };
-  
-    if (newGoal.title && newGoal.description && newGoal.end_date) {
-      try {
-        const response = await axios.post('/goals', newGoal);
-        // Handle successful response
-        console.log(response.data);
-        // Reload the page to display the newly added goal
-        window.location.reload();
-      } catch (error) {
-        // Handle error
-        console.error(error);
-      }
-  
-      titleInput.value = '';
-      descriptionInput.value = '';
-      endDateInput.value = '';
-    }
-  });
-  
+    // Perform validation checks here
+    addGoalForm.submit();
+});
