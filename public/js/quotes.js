@@ -14,3 +14,6 @@ mountainbackground.addEventListener('click', async (event) => {
     changeBackground('/images/mountains.jpg')
 });
 
+forestbackground.addEventListener('click', async (event) => {
+    changeBackground('/images/forest.jpg')
+});
