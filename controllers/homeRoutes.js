@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Goals, TimeCapsule, User } = require('../models');
 const withAuth = require('../utils/auth');
+const fetch = require('node-fetch');
+const api_url = 'https://zenquotes.io/api/quotes/';
 
 router.get('/', async (req, res) => {
   try {
@@ -12,23 +14,35 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/dashboard', async (req, res) => {
   try {
+    const response = await fetch(api_url);
+    const data = await response.json();
+    const quote = data[0].q;
+    const author = data[0].a;
+
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Goals, TimeCapsule, User }],
+      include: [Goals, TimeCapsule], // Include the associated models directly
     });
 
     const user = userData.get({ plain: true });
 
     res.render('dashboard', {
-      ...user,
+      quote,
+      author,
+      user,
+      goal: user.Goal, // Include the goal object
+      timecapsule: user.TimeCapsule, // Include the timecapsule object
       logged_in: true,
     });
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('An error occurred.');
   }
 });
+
+
 
 router.get('/goals', withAuth, async (req, res) => {
   try {
