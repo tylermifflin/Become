@@ -9,3 +9,8 @@ const newquotehandler = async (event) => {
     // refresh page
     document.location.replace('/quotes');
 }
+
+mountainbackground.addEventListener('click', async (event) => {
+    changeBackground('/images/mountains.jpg')
+});
+
