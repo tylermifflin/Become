@@ -1,36 +1,35 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{user.name}}!</h2>
+    <h2>{{name}}'s Dashboard</h2>
   </div>
 </div>
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Dashboard</h3>
 
-    <h4>{{quote}}</h4>
-    <h6>by {{author}}</h6>  
+    <h5>{{quote}}</h5>
+    <h6>by {{author}}</h>
 
-  {{#if goal.length}}
+  {{#if goals.length}}
   <div class="col-md-6 project-list">
-    <h3>Current Goals:</h3>
-    {{#each goal as |goal|}}
+    <h3>Active Goals:</h3>
+    {{#each goals as |goals|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/goal/{{goal.id}}">{{goal.title}}</a></h4>
+        <h4><a href="/goals/{{goals.id}}">{{goals.title}}</a></h4>
       </div>
     </div>
     {{/each}}
   </div>
   {{/if}}
 
- {{#if timecapsule.length}}
+ {{#if timeCapsules.length}}
   <div class="col-md-6 project-list">
-    <h3>Time Capsule:</h3>
-    {{#each timecapsule as |timecapsule|}}
+    <h3>Locked Time Capsules:</h3>
+    {{#each timeCapsules as |timeCapsules|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/timecapsule/{{goal.id}}">{{timecapsule.title}}</a></h4>
+        <h4><a href="/timeCapsule/{{timeCapsules.id}}">{{timeCapsules.title}}</a></h4>
       </div>
     </div>
     {{/each}}
