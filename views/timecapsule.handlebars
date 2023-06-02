@@ -28,20 +28,30 @@
     <p>No Capsule found.</p>
   {{/if}}
 
-  <form id="create-timecapsule-form" action="/goals" method="POST">
-    <label for="title">TimeCapsule Name:</label>
-    <input type="text" name="title" id="title" placeholder="Enter a title" required>
-    <br>
-    <label for="description">What would you like to say to your future self?:</label>
-    <input type="text" name="description" id="description" placeholder="Enter a description" required>
+  <!-- create a new Time Capsule form -->
+<div class="row">
+    <div class="col">
+        <h2>Create a new Time Capsule</h2>
+<!-- Use newBlogPostHandler from dashboard.js -->
+  <form class="form new-timecapsule-form">
+    <div class="form-group">
+        <label for="timecapsule-title">Time Capsule Name</label>
+        <input class="form-input" id="timecapsule-title" name="timecapsule-title" type="text" />
+    </div>
+    <div class="form-group">
+        <label for="timecapsule-content">What Would you Like to Say to Your Future Self? </label>
+        <textarea class="form-input" id="timecapsule-content" name="timecapsule-content" rows="3" ></textarea>
+    </div>
     <br>
     <label for="end_date">End Date:</label>
     <input type="date" name="end_date" id="end_date" required>
     <br>
-     <div class="form-group">
-    <button type="submit" class="btn btn-primary new-timecapsule-form">Create New Time Capsule</button>
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary new-timecapsule-form"> Create New</button>
     </div>
   </form>
+  </div>
+</div>
 
   <script src="./js/timecapsule.js"></script>
 </body>
