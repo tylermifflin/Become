@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Time Capsule</title>
-  <!--link rel="stylesheet" href="../public/css/timecapsule.css"-->
-</head>
-<body>
+<div class="row">
+  <div class="col-auto">
   <h1>Time Capsule</h1>
+  </div>
+</div>
 
-  {{!-- {{#if timeCapsules}}
-    <ul>
-      {{#each timeCapsules}}
-        <li>
-          <h2>{{this.title}}</h2>
-          <p>{{this.description}}</p>
-          <p>Created: {{this.date_created}}</p>
-          <p>End Date: {{this.end_date}}</p>
-          <form action="/goals/{{this.id}}" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <button class="btn btn-danger delete-timecapsule" type="button" data-id="{{this.id}}">Delete</button>
-          </form>
-        </li>
-      {{/each}}
-    </ul>
-  {{else}}
-    <p>No Capsule found.</p>
-  {{/if}} --}}
+  <!-- display all Time Capsules -->
+  {{#if timeCapsules.length}}
+<!-- show all of the user's blog posts with option to update or delete -->
+<div class="row">
+    <div class="col">
+        <h2>Your Time Capsules</h2>
+    </div>
+</div>
+{{#each timeCapsules as |timeCapsules|}}
+<div class="row">
+    <div class="col">
+        <h3><a href="/timecapsule/{{timeCapsules.id}}">{{timeCapsules.title}}</a></h3>
+        <p>{{timeCapsules.description}}</p>
+        <p>{{timeCapsules.end_date}}</p>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-danger delete-timecapsule" data-id="{{timeCapsules.id}}">Delete</button>
+    </div>
+{{/each}}
+</div>
+{{/if}}
+</div>
 
   <!-- create a new Time Capsule form -->
 <div class="row">
@@ -53,5 +52,5 @@
 </div>
 
   <script src="./js/timecapsule.js"></script>
-</body>
-</html>
+
+

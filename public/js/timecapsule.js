@@ -45,6 +45,6 @@ const newTimeCapsuleFormHandler = async (event) => {
         .querySelector('.new-timecapsule-form')
         .addEventListener('submit', newTimeCapsuleFormHandler);
         
-    //document
-     //   .querySelector('.delete-timecapsule')
-     //   .addEventListener('click', deleteTimeCapsule);
+    document
+       .querySelector('.delete-timecapsule')
+       .addEventListener('click', deleteTimeCapsule);
