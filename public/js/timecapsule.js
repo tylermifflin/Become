@@ -1,21 +1,24 @@
-// Attach event listener to delete buttons
-const deleteButtons = document.querySelectorAll('.delete-btn');
-deleteButtons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-        event.preventDefault();
-        const confirmation = confirm('Are you sure you want to delete this time capsule?');
-        if (confirmation) {
-            const form = button.parentNode;
-            form.submit();
-        }
-    });
-});
-
-// Attach event listener to create time capsule button
-const createTimeCapsuleForm = document.getElementById('create-timecapsule-form');
-const createTimeCapsuleButton = document.getElementById('create-timecapsule-btn');
-createTimeCapsuleButton.addEventListener('click', (event) => {
+// setting up an event listener for the new timecapsule post form
+const newTimeCapsuleFormHandler = async (event) => {
     event.preventDefault();
-    // Perform validation checks here
-    createTimeCapsuleForm.submit();
-});
+    
+    // get the title and content from the form
+    const title = document.querySelector('#timecapsule-title').value.trim();
+    const content = document.querySelector('#timecapsule-content').value.trim();
+    
+    // if both title and content exist, send a POST request to the API endpoint
+    if (title && content) {
+        const response = await fetch(`/api/timecapsules`, {
+        method: 'POST',
+        body: JSON.stringify({ title, content }),
+        headers: { 'Content-Type': 'application/json' },
+        });
+    
+        // if the response is okay, reload the page
+        if (response.ok) {
+        document.location.replace('/timecapsule');
+        } else {
+        alert('Failed to create time capsule');
+        }
+    }
+    }
