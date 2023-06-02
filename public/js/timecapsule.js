@@ -1,21 +1,50 @@
-// Attach event listener to delete buttons
-const deleteButtons = document.querySelectorAll('.delete-btn');
-deleteButtons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-        event.preventDefault();
-        const confirmation = confirm('Are you sure you want to delete this time capsule?');
-        if (confirmation) {
-            const form = button.parentNode;
-            form.submit();
-        }
-    });
-});
-
-// Attach event listener to create time capsule button
-const createTimeCapsuleForm = document.getElementById('create-timecapsule-form');
-const createTimeCapsuleButton = document.getElementById('create-timecapsule-btn');
-createTimeCapsuleButton.addEventListener('click', (event) => {
+// setting up an event listener for the new timecapsule post form
+const newTimeCapsuleFormHandler = async (event) => {
     event.preventDefault();
-    // Perform validation checks here
-    createTimeCapsuleForm.submit();
-});
+    
+    // get the title and content from the form
+    const title = document.querySelector('#timecapsule-title').value.trim();
+    const description = document.querySelector('#timecapsule-content').value.trim();
+    const end_date = document.querySelector('#end_date').value.trim();
+    
+    
+    // if both title and content exist, send a POST request to the API endpoint
+    if (title && description && end_date) {
+        const newTimeCapsule = await fetch(`/api/timeCapsules`, {
+        method: 'POST',
+        body: JSON.stringify({ title, description, end_date }),
+        headers: { 'Content-Type': 'application/json' },
+        });
+    
+        // if the response is okay, reload the page
+        if (newTimeCapsule.ok) {
+        document.location.replace('/timecapsule');
+        } else {
+        alert('Unsuccessful time capsule post. Please try again.');
+        }
+    }
+    };
+
+    // setting up event listener for the delete button
+    const deleteTimeCapsule = async (event) => {
+        if (event.target.hasAttribute('data-id')) {
+            const id = event.target.getAttribute('data-id');
+            const deletetimecapsule = await fetch(`/api/timeCapsules/${id}`, {
+                method: 'DELETE',
+            });
+            // if the response is okay, reload the page
+            if (deletetimecapsule.ok) {
+                document.location.replace('/timecapsule');
+            } else {
+                alert('Unsuccessful time capsule deletion. Please try again.');
+            }
+        }
+    };
+
+    document 
+        .querySelector('.new-timecapsule-form')
+        .addEventListener('submit', newTimeCapsuleFormHandler);
+        
+    //document
+     //   .querySelector('.delete-timecapsule')
+     //   .addEventListener('click', deleteTimeCapsule);
