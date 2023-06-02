@@ -42,7 +42,7 @@ const submitFormHandler = async (event) => {
           });
   
           if (response.ok) {
-            window.location.reload();
+            document.location.replace('/goals');
           } else {
             console.error('Failed to delete goal');
           }
@@ -54,10 +54,13 @@ const submitFormHandler = async (event) => {
   };
   
   document.querySelector('#add-goal-form').addEventListener('submit', submitFormHandler);
-  
-  const deleteButtons = document.querySelectorAll('.delete-btn');
-  deleteButtons.forEach((button) => {
-    button.addEventListener('click', deleteButtonHandler);
+
+  document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('delete-btn')) {
+      event.preventDefault();
+      deleteButtonHandler(event);
+    }
   });
+  
   
   
