@@ -19,7 +19,7 @@
           <p>End Date: {{this.end_date}}</p>
           <form action="/goals/{{this.id}}" method="POST">
             <input type="hidden" name="_method" value="DELETE">
-            <button class="delete-btn" type="submit">Delete</button>
+            <button class="btn btn-danger delete-timecapsule" type="button" data-id="{{this.id}}">Delete</button>
           </form>
         </li>
       {{/each}}
@@ -38,7 +38,9 @@
     <label for="end_date">End Date:</label>
     <input type="date" name="end_date" id="end_date" required>
     <br>
-    <button id="create-timecapsule-btn" type="submit">Create TimeCapsule</button>
+     <div class="form-group">
+    <button type="submit" class="btn btn-primary new-timecapsule-form">Create New Time Capsule</button>
+    </div>
   </form>
 
   <script src="./js/timecapsule.js"></script>
