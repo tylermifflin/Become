@@ -6,7 +6,7 @@ const timeCapsule = require('./timeCapsuleRoutes')
 
 router.use('/users', userRoutes);
 router.use('/goals', goalRoutes);
-router.use('/timeCapsule', timeCapsuleRoutes);
+router.use('/timeCapsule', timeCapsule);
 
 
 module.exports = router;
