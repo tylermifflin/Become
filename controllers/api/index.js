@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const GoalRoutes = require('./GoalRoutes');
-const timeCapsuleRoutes = require('./timeCapsuleRoutes')
+const goalRoutes = require('./GoalRoutes');
+const timeCapsule = require('./timeCapsuleRoutes')
 
 
 router.use('/users', userRoutes);
-router.use('/goals', GoalRoutes);
-router.use('/timeCapsules', timeCapsuleRoutes);
+router.use('/goals', goalRoutes);
+router.use('/timeCapsule', timeCapsuleRoutes);
+
 
 module.exports = router;
