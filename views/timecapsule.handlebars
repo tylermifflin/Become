@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Time Capsule</title>
-  <link rel="stylesheet" href="../public/css/timecapsule.css">
+  <!--link rel="stylesheet" href="../public/css/timecapsule.css"-->
 </head>
 <body>
-  <h1>Time Capsule</h1>
+  {{!-- <h1>Time Capsule</h1>
 
   {{#if timeCapsules}}
     <ul>
@@ -26,7 +26,7 @@
     </ul>
   {{else}}
     <p>No Capsule found.</p>
-  {{/if}}
+  {{/if}} --}}
 
   <!-- create a new Time Capsule form -->
 <div class="row">
@@ -42,7 +42,6 @@
         <label for="timecapsule-content">What Would you Like to Say to Your Future Self? </label>
         <textarea class="form-input" id="timecapsule-content" name="timecapsule-content" rows="3" ></textarea>
     </div>
-    <br>
     <label for="end_date">End Date:</label>
     <input type="date" name="end_date" id="end_date" required>
     <br>

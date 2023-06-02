@@ -4,13 +4,15 @@ const newTimeCapsuleFormHandler = async (event) => {
     
     // get the title and content from the form
     const title = document.querySelector('#timecapsule-title').value.trim();
-    const content = document.querySelector('#timecapsule-content').value.trim();
+    const description = document.querySelector('#timecapsule-content').value.trim();
+    const end_date = document.querySelector('#end_date').value.trim();
+    
     
     // if both title and content exist, send a POST request to the API endpoint
-    if (title && content) {
-        const newTimeCapsule = await fetch(`/api/timecapsules`, {
+    if (title && description && end_date) {
+        const newTimeCapsule = await fetch(`/api/timeCapsules`, {
         method: 'POST',
-        body: JSON.stringify({ title, content }),
+        body: JSON.stringify({ title, description, end_date }),
         headers: { 'Content-Type': 'application/json' },
         });
     
@@ -27,7 +29,7 @@ const newTimeCapsuleFormHandler = async (event) => {
     const deleteTimeCapsule = async (event) => {
         if (event.target.hasAttribute('data-id')) {
             const id = event.target.getAttribute('data-id');
-            const deletetimecapsule = await fetch(`/api/timecapsules/${id}`, {
+            const deletetimecapsule = await fetch(`/api/timeCapsules/${id}`, {
                 method: 'DELETE',
             });
             // if the response is okay, reload the page
@@ -43,6 +45,6 @@ const newTimeCapsuleFormHandler = async (event) => {
         .querySelector('.new-timecapsule-form')
         .addEventListener('submit', newTimeCapsuleFormHandler);
         
-    document
-        .querySelector('.delete-timecapsule')
-        .addEventListener('click', deleteTimeCapsule);
+    //document
+     //   .querySelector('.delete-timecapsule')
+     //   .addEventListener('click', deleteTimeCapsule);
