@@ -10,7 +10,7 @@ const newTimeCapsuleFormHandler = async (event) => {
     
     // if both title and content exist, send a POST request to the API endpoint
     if (title && description && end_date) {
-        const newTimeCapsule = await fetch(`/api/timeCapsules`, {
+        const newTimeCapsule = await fetch(`/api/timeCapsule`, {
         method: 'POST',
         body: JSON.stringify({ title, description, end_date }),
         headers: { 'Content-Type': 'application/json' },
