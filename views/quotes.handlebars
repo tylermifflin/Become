@@ -1,6 +1,14 @@
 <!-- setting up quotes.handlebars to use quotes.js here and render the quotes -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivational Quotes!</title>
+  <link rel="stylesheet" href="/css/quotes.css">
+  
+</head>
 
 <body id="container">
+  <div class="flex-column justify-space-around">     
   <h1>Motivational Quote of the Day</h1>
 <!-- i want to insert getapi function from quotes.handlebars into this div-->
 <div class="quote-container">
@@ -18,6 +26,7 @@
     <div class="buttons">
         <button class="btn btn-primary" id="mountain-background">Mountain Background</button>
         <button class="btn btn-primary" id="forest-background">Forest Background</button>
+   </div>
 </div>
 
 <script src="./js/quotes.js"></script>
