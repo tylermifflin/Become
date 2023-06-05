@@ -20,7 +20,11 @@
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/dashboard">Dashboard</a> |
+        <a href="/quotes">Quotes</a> |
+        <a href="/goals">Goals</a> |
+        <a href="/timecapsule">Time Capsule</a> |
         <button class="no-button" id="logout">logout</button>
+        
         {{else}}
         <a href="/login">login</a>
         {{/if}}
