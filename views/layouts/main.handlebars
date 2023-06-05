@@ -7,6 +7,7 @@
   <title>Become</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/quotes.css">
 </head>
 
 <body>
@@ -21,6 +22,12 @@
         {{#if logged_in}}
         <a href="/dashboard">Dashboard</a> |
         <button class="no-button" id="logout">logout</button>
+        <a href="/quotes">Quotes</a>
+        <button class="no-button" id="quotes">Quotes</button>
+        <a href="/goals">Goals</a>
+        <button class="no-button" id="goals">Goals</button>
+        <a href="/timecapsule">Time Capsule</a>
+        <button class="no-button" id="timecapsule">Time Capsule</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
