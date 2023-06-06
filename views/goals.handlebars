@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
+
     <title>Goals</title>
-    <link rel="stylesheet" href="../public/css/goals.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/goals.css">
+
     <h1>Goals</h1>
 
     {{#if goals}}
@@ -18,7 +14,7 @@
             <p>End Date: {{this.end_date}}</p>
             <form action="/goals/{{this.id}}" method="POST">
                 <input type="hidden" name="_method" value="DELETE">
-                <button class="delete-btn" type="submit">Delete</button>
+                <button class="delete-btn" data-id="{{this.id}}" type="submit">Delete</button>
             </form>
         </li>
         {{/each}}
@@ -27,7 +23,7 @@
     <p>No goals found.</p>
     {{/if}}
 
-    <form id="add-goal-form" action="/goals" method="POST">
+    <form id="add-goal-form">
         <label for="title">Goal Name:</label>
         <input type="text" name="title" id="title" placeholder="Enter a title" required>
         <br>
@@ -40,6 +36,6 @@
         <button id="add-goal-btn" type="submit">Add Goal</button>
     </form>
 
-    <script src="../public/js/goals.js"></script>
-</body>
-</html>
+    <script src="js/goals.js"></script>
+
+

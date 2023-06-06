@@ -152,7 +152,8 @@ router.get('/quotes', async (req, res) => {
       const data = await response.json();
       const quote = data[0].q; 
       const author = data[0].a; 
-      res.render('quotes', { quote, author });
+      res.render('quotes', { quote, author, logged_in: req.session.logged_in });
+
     } catch (error) {
       console.log(error);
       res.status(500).send('An error occurred.');
