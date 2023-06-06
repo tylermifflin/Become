@@ -1,10 +1,10 @@
 // creating variables to change the background image
 const container = document.getElementById('container');
-const images = ['/images/mountains.jpg', '/images/forest.jpg', 'images/beach.jpg'];
+const images = ['/images/kalalaubeachkaui.jpg', '/images/mesaarch.jpg', '/images/montrotuiridge.jpg', 
+'/images/mtsuperiorfall.jpg', '/images/priestlakenorthernlights.jpg', '/images/reflectioncanyon.jpg',
+'/images/skypond.jpg', '/images/thewave.jpg']
 const randomimage = images[Math.floor(Math.random() * images.length)];
 container.style.backgroundImage = `url(${randomimage})`;
-const mountainbackground = document.getElementById('mountain-background');
-const forestbackground = document.getElementById('forest-background');
 
 // funtion to get a new quote
 const newquotehandler = async (event) => {
@@ -12,14 +12,6 @@ const newquotehandler = async (event) => {
     // refresh page
     document.location.replace('/quotes');
 }
-
-mountainbackground.addEventListener('click', async (event) => {
-    changeBackground('/images/mountains.jpg')
-});
-
-forestbackground.addEventListener('click', async (event) => {
-    changeBackground('/images/forest.jpg')
-});
 
 const changeBackground = async (image) => {
     container.style.backgroundImage = `url(${image})`;
