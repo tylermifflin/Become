@@ -1,5 +1,8 @@
 // creating variables to change the background image
 const container = document.getElementById('container');
+const images = ['/images/mountains.jpg', '/images/forest.jpg', 'images/beach.jpg'];
+const randomimage = images[Math.floor(Math.random() * images.length)];
+container.style.backgroundImage = `url(${randomimage})`;
 const mountainbackground = document.getElementById('mountain-background');
 const forestbackground = document.getElementById('forest-background');
 
