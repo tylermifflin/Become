@@ -9,24 +9,33 @@
 <body>
   <h1>Time Capsule</h1>
 
-  {{#if timeCapsules}}
-    <ul>
-      {{#each timeCapsules}}
-        <li>
-          <h2>{{this.title}}</h2>
-          <p>{{this.description}}</p>
-          <p>Created: {{this.date_created}}</p>
-          <p>End Date: {{this.end_date}}</p>
-          <form action="/goals/{{this.id}}" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <button class="delete-btn" type="submit">Delete</button>
-          </form>
-        </li>
-      {{/each}}
-    </ul>
-  {{else}}
-    <p>No Capsule found.</p>
-  {{/if}}
+{{#if timeCapsules}}
+  <ul>
+    {{#each timeCapsules}}
+      <li>
+        <h2>{{this.title}}</h2>
+        <p>Created: {{format_date this.date_created}}</p>
+        <p>End Date: {{format_date this.end_date}}</p>
+        <p id="timecapsule-content"></p>
+        <form action="/goals/{{this.id}}" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="delete-btn" type="submit">Delete</button>
+        </form>
+
+        {{#if (hasExpired this.end_date)}}
+          <button class="active-btn" id="countdown-btn" data-unlock-content="{{this.description}}">Thinking...</button>
+        {{else}}
+          <button class="active-btn" id="countdown-btn" data-end-date="{{this.end_date}}" disabled>Thinking...</button>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+...
+
+  <p>No Capsule found.</p>
+{{/if}}
+
 
   <form id="create-timecapsule-form" action="/goals" method="POST">
     <label for="title">TimeCapsule Name:</label>
