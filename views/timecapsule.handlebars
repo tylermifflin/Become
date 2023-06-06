@@ -17,7 +17,7 @@
     <div class="col">
         <h3><a href="/timecapsule/{{timeCapsules.id}}">{{timeCapsules.title}}</a></h3>
         <p>{{timeCapsules.description}}</p>
-        <p>{{timeCapsules.end_date}}</p>
+        <p>{{format_date timeCapsules.end_date}}</p>
     </div>
     <div class="col">
         <button type="button" class="btn btn-danger delete-timecapsule" data-id="{{timeCapsules.id}}">Delete</button>
