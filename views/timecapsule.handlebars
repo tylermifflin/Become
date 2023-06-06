@@ -11,7 +11,7 @@
         <p>Created: {{format_date this.date_created}}</p>
         <p>End Date: {{format_date this.end_date}}</p>
         <p id="timecapsule-content"></p>
-        <form action="/goals/{{this.id}}" method="POST">
+        <form action="/timecapsule/{{this.id}}" method="POST">
           <input type="hidden" name="_method" value="DELETE">
           <button class="delete-btn" type="submit">Delete</button>
         </form>

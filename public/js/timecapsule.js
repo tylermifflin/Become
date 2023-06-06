@@ -60,7 +60,7 @@ const newTimeCapsuleFormHandler = async (event) => {
     const deleteTimeCapsule = async (event) => {
         if (event.target.hasAttribute('data-id')) {
             const id = event.target.getAttribute('data-id');
-            const deletetimecapsule = await fetch(`/api/timeCapsules/${id}`, {
+            const deletetimecapsule = await fetch(`/api/timeCapsule/${id}`, {
                 method: 'DELETE',
             });
             // if the response is okay, reload the page
