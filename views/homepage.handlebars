@@ -1,28 +1,36 @@
 <header>Become: Self Help App</header>
 <script src="public\js\login.js"></script>
 
- {{#if logged_in}}
-        <div>
-          <h1>Welcome, {{name}}</h1>
-        </div>
+{{#if logged_in}}
+  <div>
+    <h1>Welcome, {{name}}</h1>
+  </div>
 
-        </div>
-          <a href="/quotes" >Quotes</a>
-        </div>
+<div>
+  <button class="custom-button" onclick="window.location.href='/quotes'">
+    <span class="button_top">Quotes</span>
+  </button>
+</div>
 
-        <div>
-          <a href="/goals">Goals</a>
-        </div>
+<div>
+  <button class="custom-button" onclick="window.location.href='/goals'">
+    <span class="button_top">Goals</span>
+  </button>
+</div>
 
-        <div>
-          <a href="/timecapsule">Time Capsule</a>
-        </div>
+<div>
+  <button class="custom-button" onclick="window.location.href='/timecapsule'">
+    <span class="button_top">Time Capsule</span>
+  </button>
+</div>
 
-        {{else}}
-        <div>
-          <h2>Experience the power of "Become" - your ultimate catalyst for personal transformation! 
-            Join us now and embark on your journey of self-improvement! 
-          </h2>
-          <a href="/login">Login/Signup</a>
-        </div>
-        {{/if}}
+
+
+{{else}}
+  <div>
+    <h2>Experience the power of "Become" - your ultimate catalyst for personal transformation! 
+      Join us now and embark on your journey of self-improvement! 
+    </h2>
+    <button onclick="window.location.href='/login'">Login/Signup</button>
+  </div>
+{{/if}}

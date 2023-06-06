@@ -22,3 +22,84 @@ header, .project:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
+
+header, .project:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+.no-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #1b89bc;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.no-button:hover {
+  color: #065b83;
+  text-decoration: underline;
+}
+
+.dollar-amount {
+  color: #056605;
+  font-weight: bold;
+  margin-left: -5px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header h2 {
+  margin: 0;
+  margin-left: 10px;
+}
+
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a,
+header nav button {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #1b89bc;
+}
+
+header nav a:hover,
+header nav button:hover {
+  text-decoration: underline;
+}
+
+/* custom buttons on homepage */
+.custom-button {
+  display: inline-block;
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+
+.custom-button:hover {
+  border: 1px solid #1b89bc;
+}
+
+.custom-button:active {
+  box-shadow: 4px 4px 12px #000000,
+             -4px -4px 12px #000000;
+}
