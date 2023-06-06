@@ -103,3 +103,53 @@ header nav button:hover {
   box-shadow: 4px 4px 12px #000000,
              -4px -4px 12px #000000;
 }
+
+#container {
+  margin : 0;
+  padding: 0;
+  background-size: cover;
+  background-repeat : no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  
+  
+} 
+
+
+.quote-style {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #e8e8e8;
+  border-radius: 0.1em;
+  background: #1b89bc;
+  text-shadow: 2px 2px 4px #575555;
+}
+
+.quote-author {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  color:#1b89bc;
+  padding: 0.1em;
+  border-radius: 0.1em;
+  background: #e8e8e8;
+  text-shadow: 2px 2px 4px #575555;
+}
+
+
+.quotes-button {
+  display: inline-block;
+  color: #090909;
+  padding: 0.25em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
