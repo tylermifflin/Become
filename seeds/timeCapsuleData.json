@@ -10,14 +10,14 @@
     "title": "The Ultimate Tech Quiz",
     "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
     "date_created": "05/25/2023",
-    "end_date": "06/30/2023",
+    "end_date": "05/30/2023",
     "user_id": 2
   },
   {
     "title": "Roll 'Em Up",
     "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
     "date_created": "05/25/2023",
-    "end_date": "06/30/2023",
+    "end_date": "05/30/2023",
     "user_id": 3
   }
 ]
