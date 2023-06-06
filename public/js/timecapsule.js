@@ -1,17 +1,21 @@
 
 // setting up an event listener for the new timecapsule post form
 const newTimeCapsuleFormHandler = async (event) => {
+    console.log("test");
   event.preventDefault();
   
   // get the title and content from the form
   const title = document.querySelector('#timecapsule-title').value.trim();
-  const description = document.querySelector('#timecapsule-content').value.trim();
+  const description = document.querySelector('#time-capsule-content').value
   const end_date = document.querySelector('#end_date').value.trim();
   
-  
+   console.log(title);
+    console.log(description);
+    console.log(end_date);
   // if both title and content exist, send a POST request to the API endpoint
   if (title && description && end_date) {
-      const newTimeCapsule = await fetch(`/api/timeCapsule`, {
+   
+      const newTimeCapsule = await fetch(`/api/timeCapsule/`, {
       method: 'POST',
       body: JSON.stringify({ title, description, end_date }),
       headers: { 'Content-Type': 'application/json' },
@@ -30,6 +34,7 @@ const newTimeCapsuleFormHandler = async (event) => {
 const deleteTimeCapsule = async (event) => {
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
+    console.log(id);
     const deletetimecapsule = await fetch(`/api/timeCapsule/${id}`, {
       method: "DELETE",
     });
