@@ -1,7 +1,8 @@
 module.exports = {
   format_date: (date) => {
     // Format date as MM/DD/YYYY
-    return date.toLocaleDateString();
+    const dateObject = new Date(date);
+    return dateObject.toLocaleDateString();
   },
   format_amount: (amount) => {
     // format large numbers with commas
@@ -19,4 +20,7 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  hasExpired: (date) => {
+  return new Date(date) < new Date();
+},
 };
