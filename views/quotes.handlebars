@@ -1,16 +1,19 @@
 <!-- setting up quotes.handlebars to use quotes.js here and render the quotes -->
 <body id="container">    
-  <h1>Motivational Quote of the Day</h1>
 <!-- i want to insert getapi function from quotes.handlebars into this div-->
 <div class="quote-container">
-  <div class="quote-text">
+  <blockquote>
+  <div class="quote-text quote-style">
     <i class="fas fa-quote-left"></i>
     <span id="quote">"{{quote}}"</span>
     </div>
   <div class="quote-author">
+    <cite>
     <span id="author">-{{author}}</span>
+    </cite>
   </div>
-  <div class="buttons">
+</blockquote>
+  <div class="quotes-button">
     <button class="btn btn-primary" id="new-quote">New Quote</button>
   </div>
 </body>
