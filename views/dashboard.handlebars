@@ -4,39 +4,38 @@
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-
+<div>
+  <div>
+    <main>
     <h5>{{quote}}</h5>
-    <h6>by {{author}}</h>
+    <h6>by {{author}}</h6>
+    </main>
 
-  {{#if goals.length}}
-  <div class="col-md-6 project-list">
-    <h3>Active Goals:</h3>
-    {{#each goals as |goals|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/goals/{{goals.id}}">{{goals.title}}</a></h4>
-      </div>
-    </div>
-    {{/each}}
+      {{#if goals.length}}
+      <article>
+        <h3>Active Goals:</h3>
+        {{#each goals as |goals|}}
+        <div>
+          <div>
+            <h4><a href="/goals">{{goals.title}}</a></h4>
+          </div>
+        </div>
+        {{/each}}
+      </article>
+      {{/if}}
+
+      {{#if timeCapsules.length}}
+      <article>
+        <h3>Time Capsules:</h3>
+        {{#each timeCapsules as |timeCapsules|}}
+        <div>
+          <div>
+            <h4><a href="/timecapsule">{{timeCapsules.title}}</a></h4>
+          </div>
+        </div>
+        {{/each}}
+      </article>
+      {{/if}}
   </div>
-  {{/if}}
 
- {{#if timeCapsules.length}}
-  <div class="col-md-6 project-list">
-    <h3>Locked Time Capsules:</h3>
-    {{#each timeCapsules as |timeCapsules|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/timecapsule/{{timeCapsules.id}}">{{timeCapsules.title}}</a></h4>
-        <h4>{{timeCapsules.description}}</h4>
-        <h4>{{timeCapsules.end_date}}</h4>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
-
-<script src="./js/profile.js"></script>
+  <script src="./js/profile.js"></script>
