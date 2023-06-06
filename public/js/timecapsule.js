@@ -78,8 +78,8 @@ deleteButtons.forEach((button) => {
     console.log(content);
     renderTo.innerHTML = content;
   };
-  document.querySelector(".active-btn").addEventListener("click", renderContent);
-
+  
+  
   document 
       .querySelector('.new-timecapsule-form')
       .addEventListener('submit', newTimeCapsuleFormHandler);
@@ -87,5 +87,7 @@ deleteButtons.forEach((button) => {
   document
      .querySelector('.delete-timecapsule')
      .addEventListener('click', deleteTimeCapsule);
+
+   document.querySelector(".active-btn").addEventListener("click", renderContent);   
     
      
