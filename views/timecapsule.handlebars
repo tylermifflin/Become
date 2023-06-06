@@ -3,33 +3,29 @@
   <h1>Time Capsule</h1>
   </div>
 </div>
-{{#if timeCapsules}}
-  <ul>
-    {{#each timeCapsules}}
-      <li>
-        <h2>{{this.title}}</h2>
-        <p>Created: {{format_date this.date_created}}</p>
-        <p>End Date: {{format_date this.end_date}}</p>
-        <p id="timecapsule-content"></p>
-        <form action="/goals/{{this.id}}" method="POST">
-          <input type="hidden" name="_method" value="DELETE">
-          <button class="delete-btn" type="submit">Delete</button>
-        </form>
 
-        {{#if (hasExpired this.end_date)}}
-          <button class="active-btn" id="countdown-btn" data-unlock-content="{{this.description}}">Thinking...</button>
-        {{else}}
-          <button class="active-btn" id="countdown-btn" data-end-date="{{this.end_date}}" disabled>Thinking...</button>
-        {{/if}}
-      </li>
-    {{/each}}
-  </ul>
-{{else}}
-...
-
-  <p>No Capsule found.</p>
+  <!-- display all Time Capsules -->
+  {{#if timeCapsules.length}}
+<!-- show all of the user's blog posts with option to update or delete -->
+<div class="row">
+    <div class="col">
+        <h2>Your Time Capsules</h2>
+    </div>
+</div>
+{{#each timeCapsules as |timeCapsules|}}
+<div class="row">
+    <div class="col">
+        <h3><a href="/timecapsule/{{timeCapsules.id}}">{{timeCapsules.title}}</a></h3>
+        <p>{{timeCapsules.description}}</p>
+        <p>{{timeCapsules.end_date}}</p>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-danger delete-timecapsule" data-id="{{timeCapsules.id}}">Delete</button>
+    </div>
+{{/each}}
+</div>
 {{/if}}
-
+</div>
 
   <!-- create a new Time Capsule form -->
 <div class="row">
