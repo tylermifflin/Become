@@ -4,6 +4,7 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
+    console.log("")
     const newTimeCapsule = await TimeCapsule.create({
       ...req.body,
       user_id: req.session.user_id,
