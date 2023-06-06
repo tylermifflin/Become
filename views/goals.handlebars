@@ -10,8 +10,8 @@
         <li>
             <h2>{{this.title}}</h2>
             <p>{{this.description}}</p>
-            <p>Created: {{this.date_created}}</p>
-            <p>End Date: {{this.end_date}}</p>
+            <p>Created: {{format_date this.date_created}}</p>
+            <p>End Date: {{format_date this.end_date}}</p>
             <form action="/goals/{{this.id}}" method="POST">
                 <input type="hidden" name="_method" value="DELETE">
                 <button class="delete-btn" data-id="{{this.id}}" type="submit">Delete</button>
