@@ -8,7 +8,7 @@ const loginFormHandler = async (event) => {
   if (email && password) {
     // Show the loader container
     const loaderContainer = document.querySelector("#loaderContainer");
-    loaderContainer.style.display = "block";
+    loaderContainer.style.display = "flex";
     const loginPage = document.querySelector('#loginPage');
     loginPage.style.display = 'none';
   

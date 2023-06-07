@@ -1762,6 +1762,12 @@ form [type='radio'] {
   height: var(--total-size);
 }
 
+#loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cell {
   flex: 0 0 var(--cell-size);
   margin: var(--cell-spacing);
