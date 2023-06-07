@@ -9,6 +9,10 @@
 * [Questions](#questions)
 ## Description
 Become is an easy to use app where the user will be inspired by looking at inspirational quotes, then have the option to create new goals, and also create a time capsule message to themselves to follow up with their goals and reflect on their progress. 
+
+Here is a link to the deployed application on Heroku: 
+https://becomethebestyou.herokuapp.com/
+
 ![screenshot](./public/images/landing_page.png)
 ![screenshot](./public/images/login_page.png)
 ![screenshot](./public/images/home_page.png)
