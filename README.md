@@ -20,11 +20,11 @@ https://becomethebestyou.herokuapp.com/
 ![screenshot](./public/images/goals_page.png)
 ![screenshot](./public/images/time_quotes.png)
 ## Installation
-npm i, mysql, source schema.sql, node seed/seeds.js
+user will need express.js, node.js, and mysql downloaded on local computer, then run npm i, mysql, source schema.sql, node seeds/seed.js
 ## Usage
-npm start
+npm start or node server.js
 ## License
-
+NA
 ## Contributing
 https://github.com/connormcgrew
 https://github.com/Evermuniz
