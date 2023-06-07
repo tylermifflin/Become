@@ -13,24 +13,30 @@
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
+      
       <h1>
         <a href="/" data-text="Awesome" class="button">
           <span class="actual-text">&nbsp;Become&nbsp;</span>
           <span class="hover-text" aria-hidden="true">&nbsp;Become&nbsp;</span>
         </a>
       </h1>
-      <h2>A user friedly self help app</h2>
+
+      <main>
+      <h2>A user friendly self help app</h2>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/dashboard">Dashboard</a> |
-        <a href="/quotes">Quotes</a> |
-        <a href="/goals">Goals</a> |
-        <a href="/timecapsule">Time Capsule</a> |
-        <button class="no-button" id="logout">logout</button>
+        <ul>
+        <li><a href="/dashboard">Dashboard</a></li>|
+        <li><a href="/quotes">Quotes</a></li>|
+        <li><a href="/goals">Goals</a></li>|
+        <li><a href="/timecapsule">Time Capsule</a></li>|
+        <li><button class="no-button" id="logout">logout</button></li>
+        </ul>
+        </main>
         
         {{else}}
-        <a href="/login">login</a>
+      
         {{/if}}
       </nav>
     </header>
